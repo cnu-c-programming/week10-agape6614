@@ -11,7 +11,6 @@ struct Node{
 struct Node* head = NULL;
 
 void add(char name[], int score){
-    
     struct Node* newNode = malloc(sizeof(struct Node));
 
     strcpy(newNode->name, name);
@@ -33,12 +32,10 @@ void add(char name[], int score){
 }
 
 void delete(char name[]){
-
     struct Node* cur = head;
     struct Node* prev = NULL;
 
     while(cur != NULL){
-
         if(strcmp(cur->name, name) == 0){
             if(prev == NULL){
                 head = cur->next;
@@ -50,16 +47,13 @@ void delete(char name[]){
             free(cur);
             return;
         }
-
         prev = cur;
         cur = cur->next;
     }
 }
 
 void print(){
-
     struct Node* cur = head;
-
     while(cur != NULL){
         printf("%s %d\n", cur->name, cur->score);
         cur = cur->next;
@@ -72,7 +66,6 @@ int main(){
         scanf("%s", cmd);
 
         if(strcmp(cmd, "add") == 0){
-
             char name[1024];
             int score;
 
@@ -82,7 +75,6 @@ int main(){
         }
 
         else if(strcmp(cmd, "delete") == 0){
-
             char name[1024];
 
             scanf("%s", name);
